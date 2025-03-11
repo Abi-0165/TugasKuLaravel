@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function () {
+    return view('LandingPage');
+});
 
 Route::get('/registerpage', function () {
     return view('RegisterPage');
