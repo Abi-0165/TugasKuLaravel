@@ -10,7 +10,9 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Tugas-Ku</div>
+        <div class="logo">
+            <span class="tugas">Tugas</span><span class="dot">•</span><span class="ku">Ku</span>
+        </div>
         <ul class="nav-links">
             <li><a href="#">Beranda</a></li>
             <li><a href="#">Fitur</a></li>
@@ -43,8 +45,6 @@
     </div>
 </section>
 
-
-
     <!-- Streak Section -->
     <section class="streak">
         <h1>JAGA <span class="highlight">STREAK</span> APIMU <br>
@@ -59,34 +59,45 @@
     </section>
 
     <!-- Kategori Section -->
-     <section class="kategori">
-        <div class="text">
-            <h2>KATEGORIKAN TUGASMU AGAR LEBIH MUDAH</h2>
+    <section class="kategori-container">
+        <div class="kategori-text">
+            <h1>KATEGORIKAN<br>TUGASMU AGAR<br>LEBIH MUDAH</h1>
             <p>Pilah tugas berdasarkan jenisnya, seperti Tugas, Ujian, atau Meeting agar lebih terorganisir. Temukan dan kelola tugas dengan mudah tanpa perlu mencari satu per satu!</p>
         </div>
-        <div class="Category image">
-            <img src="Category.png" alt="Mockup Aplikasi">
+        <div class="kategori-image">
+            <img src="Category.png" alt="Ilustrasi kategori tugas">
         </div>
-     </section>
+    </section>
 
-    <section class="Deadline">
-        <div class="Calendar image">
-            <img src="Mockup Calendar Page.png" alt="Mockup Aplikasi">
+    <!-- Calendar Section -->
+    <section class="deadline">
+        <div class="container">
+            <div class="calendar-image">
+                <img src="Mockup Calendar Page.png" alt="Mockup Aplikasi">
+            </div>
+            <div class="text">
+                <h2>LIHAT TUGAS BERDASARKAN <span class="highlight">DEADLINE</span> NYA</h2>
+                <p>Cek tugas yang harus diselesaikan lewat <span class="italic">Calendar View</span>. Lihat jadwal harian atau mingguanmu dalam sekali lihat agar lebih mudah mengatur waktu belajar.</p>
+            </div>
+            <div class="character">
+                <img src="memoji_dl.png" alt="Karakter Emoji">
+            </div>
         </div>
-         <div class="text">
-            <h2>LIHAT TUGAS BERDASARKAN <span class="highlight">DEADLINE </span>NYA</h2>
-            <P>Cek tugas yang harus diselesaikan lewat <span class="italic">Calendar View</span>. Lihat jadwal harian atau mingguanmu dalam sekali lihat agar lebih mudah mengatur waktu belajar.</P>
-         </div>
     </section>
 
     <!-- Call to action -->
-    <section class="cta">
-        <h2>TUNGGU APA LAGI? YUK CATAT TUGASMU SEKARANG!</h2>
-        <button class="btn-light">Buka di browser anda</button>
-        <h1 class="cta-title">Tugas<span>Ku</span></h1>
-        <div class="Banner image">
+    <section class="final-section">
+        <h2>TUNGGU APA LAGI? YUK CATAT<br>TUGASMU SEKARANG!</h2>
+        <button class="cta-button">Buka di Browser Anda</button>
+        <div class="banner">
             <img src="Banner illustration.png" alt="Mockup Aplikasi" style="width:100px">
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 TugasKu. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

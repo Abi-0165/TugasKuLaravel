@@ -4,83 +4,138 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+    /* border: 1px solid red; */
 }
 
 :root {
-    --kuning-tugasku: #f8bd00;
-    --Blue: #4359ff;
-    --Orange: #FF6F00;
+    --kuning: #f8bd00;
+    --biru: #4359ff;
+    --orange: #FF6F00;
+    --hitam: #151515;
+    --abu-gelap: #3c3c3c;
+    --background: #F3F3F3;
 }
 
 /* Navbar */
 .navbar {
-    position: fixed; /* Biar navbar stay di atas */
-    top: 0; /* Nempel di atas */
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%; /* Lebar full */
+    width: 100%;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: black;
+    background: var(--hitam);
     color: white;
-    padding: 10px 50px;
-    z-index: 1000; /* Supaya nggak ketimpa elemen lain */
+    padding: 10px 5vw;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 .logo {
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
     font-weight: bold;
-    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo .tugas {
+    color: white;
+}
+
+.logo .dot {
+    color: var(--biru);
+}
+
+.logo .ku {
+    color: var(--kuning);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: clamp(20px, 5vw, 50px);
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 0.8vw, 1rem);
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #ffcc00;
+    color: var(--kuning);
+    text-shadow: 0 0 15px rgba(248, 189, 0, 0.6);
 }
 
 .login-btn {
-    background: white;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 20px;
+    background-color: white;
+    color: var(--hitam);
+    font-size: clamp(0.75rem, 0.85vw, 1rem);
+    font-weight: 600;
+    padding: 8px 18px;
     border: none;
+    border-radius: 50px;
     cursor: pointer;
-    transition: 0.3s;
-    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.login-btn a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+}
+
+.login-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(248, 189, 0, 0.4);
+    transition: width 0.4s, height 0.4s, opacity 0.4s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0;
 }
 
 .login-btn:hover {
-    background: #ddd;
+    background-color: rgba(248, 189, 0, 0.85);
+    color: var(--hitam);
+    box-shadow: 0 0 15px rgba(248, 189, 0, 0.6);
 }
 
-/* Hero Section */
+.login-btn:hover::before {
+    width: 150%;
+    height: 150%;
+    opacity: 1;
+}
+
+/* ===== HERO SECTION ===== */
 .hero {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px;
-    background: url("Register.png");
-    background-size: cover;
-    background-position: center; /* Posisikan di tengah */
-    background-repeat: no-repeat; /* Jangan ulang gambar */
+    padding: 5vw;
     color: white;
     text-align: left;
     position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, var(--kuning) 0%, var(--biru) 100%), 
+                url("hero_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    opacity: 1;
 }
 
 .container {
@@ -89,28 +144,26 @@
     justify-content: space-between;
     max-width: 1200px;
     width: 100%;
+    gap: 50px;
 }
 
 /* Hero Text */
 .hero-text {
-    position: absolute;
     flex: 1;
-    max-width: 60%;
-    top: 70px;
-    left: 250px;
+    max-width: 50%;
 }
 
 .hero-text h1 {
     font-size: 3rem;
     font-weight: bolder;
-    color: black;
+    color: var(--hitam);
     letter-spacing: -1.5px;
-    line-height: 45px;
-    margin-top: 90px;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .hero-text .highlight {
-    color: #f8bd00;
+    color: var(--kuning);
 }
 
 .hero-text .white {
@@ -120,9 +173,9 @@
 .hero p {
     font-size: 1rem;
     line-height: 1.5;
-    color: black;
+    color: var(--hitam);
     margin-top: 20px;
-    width: 350px;
+    width: 350px;   /**/
 }
 
 /* Hero Image */
@@ -187,7 +240,7 @@
     width: 20px;
 }
 
-/* Streak Section */
+/* FITUR STREAK */
 .streak {
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -220,7 +273,7 @@
 }
 
 .streakk{ 
-    filter: drop-shadow(0px 0px 100px var(--Orange)); /* Efek glow */
+    filter: drop-shadow(0px 0px 100px var(--orange));
     width: 15%;
     
 }
@@ -234,20 +287,179 @@
     position: absolute;
     width: 250px;
     height: auto;
-    top: 366px;  /* Naikin gambar ke atas */
+    top: 366px;
     left: 2%;
 }
 
-
 .streak .highlight{
-    color: var(--Orange);
+    color: var(--orange);
 }
 
 .streak .highlight2{
-    color: var(--Orange);
+    color: var(--orange);
     font-size: 50px;
 }
 
-.kategori {
-    background: black;
+/* ===== FITUR KATEGORI ===== */
+.kategori-container {
+    background: linear-gradient(to bottom, var(--hitam), var(--abu-gelap));
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.kategori-glassmorph {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1100px;
+    width: 90%;
+}
+
+.kategori-text {
+    width: 33%;
+    color: white;
+    letter-spacing: -0.36px;
+}
+
+.kategori-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.kategori-text p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.kategori-image {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+}
+
+.kategori-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== FITUR CALENDAR VIEW ===== */
+.deadline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10%;
+    background: var(--background);
+    min-width: 90vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.calendar-image img {
+    max-width: 90%;
+    height: auto;
+}
+
+.text {
+    max-width: 400px;
+}
+
+.text h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.text .highlight {
+    color: #FF3B30; /* Warna merah untuk 'DEADLINE' */
+}
+
+.text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.text .italic {
+    font-style: italic;
+}
+
+/* Style untuk karakter */
+.character {
+    position: absolute;
+    right: -30px;
+    bottom: 50px;
+    width: 160px;
+    height: auto;
+}
+
+/* ===== FINAL SECTION ===== */
+.final-section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--background), var(--kuning));
+}
+
+.final-section h2 {
+    font-size: 3.5rem;
+    font-weight: 1000;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--background);
+    color: var(--hitam);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--kuning);
+}
+
+.banner {
+    justify-content: center;
+}
+
+.banner img {
+    min-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--hitam);
+    color: #FFF;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
 }
