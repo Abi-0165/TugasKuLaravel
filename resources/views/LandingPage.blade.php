@@ -24,7 +24,6 @@
 
     <!-- Hero Section -->
     <section class="hero">
-    <div class="container">
         <div class="hero-text">
             <h1>ATUR JADWAL <br> 
                 <span class="highlight">JADI LEBIH</span> 
@@ -40,10 +39,9 @@
             </div>
         
         <div class="hero-image">
-            <img src="Desain tanpa judul-2.png" alt="Mockup Aplikasi" style="width:1000px">
+            <img src="Desain tanpa judul-2.png" alt="Mockup Aplikasi" >
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Streak Section -->
     <section class="streak">

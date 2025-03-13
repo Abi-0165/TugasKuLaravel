@@ -10,10 +10,10 @@
 :root {
     --kuning: #f8bd00;
     --biru: #4359ff;
-    --orange: #FF6F00;
+    --orange: #ff6f00;
     --hitam: #151515;
     --abu-gelap: #3c3c3c;
-    --background: #F3F3F3;
+    --background: #f3f3f3;
 }
 
 /* Navbar */
@@ -122,35 +122,22 @@
     width: 100%;
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 5vw;
-    color: white;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(to right, var(--kuning) 0%, var(--biru) 100%), 
-                url("hero_bg.jpg");
+    align-items: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, var(--kuning) 0%, var(--biru) 100%),
+        url("hero_bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: overlay;
     opacity: 1;
 }
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
-    gap: 50px;
-}
-
 /* Hero Text */
 .hero-text {
     flex: 1;
-    max-width: 50%;
+    max-width: 45%;
+    transform: translateX(200px);
 }
 
 .hero-text h1 {
@@ -175,38 +162,38 @@
     line-height: 1.5;
     color: var(--hitam);
     margin-top: 20px;
-    width: 350px;   /**/
+    width: 350px; /**/
 }
 
 /* Hero Image */
 .hero-image {
-    flex: 1;
-    right:45px;
-    width: 50%;
+    width: 65%;
     display: flex;
-    position: absolute;
+    justify-content: center;
+    transform: translateX(
+        -300px
+    ); /* Sesuaikan nilai negatif untuk geser ke kiri */
 }
 
 .hero-image img {
-    width: 100%;
-    max-width: 400px;
+    max-width: 900%;
     height: auto;
+    object-fit: cover;
 }
-
 /* Buttons */
 .buttons {
     margin-top: 450px;
     display: flex;
     gap: 15px;
-    transform: scale(0.9);
-    margin-left: 370px
+    transform: scale(0.5);
+    margin-left: 370px;
 }
 
 .btn-light,
 .btn-dark {
-    padding: 10px 20px;
+    padding: 1px 80px;
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -231,15 +218,6 @@
     background: #222;
 }
 
-/* Hero Image */
-.hero-image img {
-    width: 250px;
-}
-
-.hero-text img{
-    width: 20px;
-}
-
 /* FITUR STREAK */
 .streak {
     background: rgb(255, 255, 255);
@@ -260,10 +238,9 @@
     text-align: right;
     position: relative;
     margin-right: 40px;
-    
 }
 
-.streak p{
+.streak p {
     margin-top: 30px;
     text-align: left;
     font-weight: 200;
@@ -272,18 +249,17 @@
     font-size: 20px;
 }
 
-.streakk{ 
+.streakk {
     filter: drop-shadow(0px 0px 100px var(--orange));
     width: 15%;
-    
 }
 
-.textMemo{
+.textMemo {
     font-size: 30px;
     margin-top: 70px;
 }
 
-.textMemo img{
+.textMemo img {
     position: absolute;
     width: 250px;
     height: auto;
@@ -291,11 +267,11 @@
     left: 2%;
 }
 
-.streak .highlight{
+.streak .highlight {
     color: var(--orange);
 }
 
-.streak .highlight2{
+.streak .highlight2 {
     color: var(--orange);
     font-size: 50px;
 }
@@ -389,7 +365,7 @@
 }
 
 .text .highlight {
-    color: #FF3B30; /* Warna merah untuk 'DEADLINE' */
+    color: #ff3b30; /* Warna merah untuk 'DEADLINE' */
 }
 
 .text p {
@@ -405,7 +381,7 @@
 /* Style untuk karakter */
 .character {
     position: absolute;
-    right: -30px;
+    transform: scaleX(10px);
     bottom: 50px;
     width: 160px;
     height: auto;
@@ -458,7 +434,7 @@
 /* ===== FOOTER ===== */
 footer {
     background: var(--hitam);
-    color: #FFF;
+    color: #fff;
     text-align: center;
     padding: 20px 0;
     font-size: 0.9rem;
