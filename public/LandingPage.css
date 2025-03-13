@@ -172,7 +172,7 @@
     justify-content: center;
     transform: translateX(
         -300px
-    ); /* Sesuaikan nilai negatif untuk geser ke kiri */
+    );
 }
 
 .hero-image img {
